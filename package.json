@@ -1,0 +1,7 @@
+{
+  "name": "patterns",
+  "license": "UNLICENSED",
+  "scripts": {
+    "singleton": "node ./patterns/singleton.js"
+  }
+}
