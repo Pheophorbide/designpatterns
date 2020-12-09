@@ -2,6 +2,7 @@
   "name": "patterns",
   "license": "UNLICENSED",
   "scripts": {
-    "singleton": "node ./patterns/singleton.js"
+    "singleton": "node ./patterns/singleton.js",
+    "factory": "node ./patterns/factory-method.js"
   }
 }
