@@ -4,33 +4,63 @@
 // конструктора, который создает объект
 // и класса, который вызывает это конструктор с определенными параметрами
 
-class Product {
-    constructor(type, price, minCount) {
-        this.type = type;
-        this.price = price;
-        this.minCount = minCount;
+class Metrics {
+    constructor(event, screen, label) {
+        this.event = event;
+        this.screen = screen;
+        this.label = label;
     }
 
-    print() {
-        return `Продукт ${this.type} по цене ${this.price} p. доступен при минимальном заказе от ${this.minCount} шт.`;
-    }
-}
-
-class ProductFactory {
-    create(type) {
-        if(type === 'молоко') {
-            return new Product(type, 80, 10).print();
-        } else if (type === 'сыр') {
-            return new Product(type, 200, 15).print();
+    create() {
+        return {
+            event: this.event,
+            screen: this.screen,
+            label: this.label
         }
-
-        return `У нас нет информации о продукте ${type}`;
     }
 }
 
-const milk = new ProductFactory().create('молоко');
-const cheese = new ProductFactory().create('сыр');
-const other = new ProductFactory().create('курочка');
+class MetricsChangeFactory {
+    constructor(screen, label) {
+        this.label = label;
+        this.screen = screen;
+    }
 
-console.log(milk, cheese, other)
+    create() {
+        return new Metrics('change', this.screen, this.label).create();
+    }
+}
+
+class MetricsScreenOpenFactory {
+    constructor(screen, label) {
+        this.label = label;
+        this.screen = screen;
+    }
+
+    create() {
+        return new Metrics('screen open', this.screen, this.label).create();
+    }
+}
+
+class MetricsScreenCloseFactory {
+    constructor(screen, label) {
+        this.label = label;
+        this.screen = screen;
+    }
+
+    create() {
+        return new Metrics('screen close', this.screen, this.label)
+    }
+}
+
+const button1 = new MetricsChangeFactory('Первый экран', 'клик по кнопке Открыть').create();
+const button2 = new MetricsChangeFactory('Второй экран', 'клик по кнопке Продолжить').create();
+
+console.log(button1, button2)
+
+module.exports = {
+    MetricsChangeFactory,
+    MetricsScreenCloseFactory,
+    MetricsScreenOpenFactory
+}
 
