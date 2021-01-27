@@ -5,6 +5,8 @@
     "singleton": "node ./patterns/singleton.js",
     "factory": "node ./patterns/factory-method.js",
     "abstract:factory": "node ./patterns/abstract-factory.js",
-    "prototype": "node ./patterns/prototype.js"
+    "prototype": "node ./patterns/prototype.js",
+    "builder": "node ./patterns/builder.js",
+    "decorator": "node ./patterns/decorator.js"
   }
 }

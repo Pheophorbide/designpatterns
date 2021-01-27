@@ -18,4 +18,4 @@ const table2 = prototypeTable.produce();
 table2.column = 2;
 table2.width = 400;
 
-console.log(table1, '<<>>', table2);
+console.log(table1, '<<>>', table2, '\\\///');

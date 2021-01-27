@@ -1,0 +1,60 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    outline: 1px dashed green;
+    color: green;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    outline: 1px dashed blue;
+    color: blue;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+aside {
+    outline: 1px dashed lightcoral;
+    color: lightcoral;
+    padding: 20px;
+}
+
+.content {
+    outline: 1px dashed lightgreen;
+    color: lightgreen;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.login {
+    outline: 1px dashed red;
+    color: red;
+    padding: 0 10px;
+}
+
+.menu {
+    flex-grow: 1;
+    outline: 1px dashed purple;
+    color: purple;
+    padding: 0 10px;
+}
+
+.menu a {
+    padding-right: 10px;
+}
